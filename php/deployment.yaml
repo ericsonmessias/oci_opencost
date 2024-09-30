@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: php
+  name: php
+  labels:
+    app: php
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: php
+  template:
+    metadata:               # Adicionei o bloco 'metadata' faltante no template
+      labels:
+        app: php
+    spec:
+      containers:
+        - name: php
+          image: ericsonmessias/php:v1
+          resources:        
+            limits:
+              cpu: "200m"   
+              memory: "2Gi" 
+            requests:        
+              cpu: "100m"
+              memory: "1Gi"
