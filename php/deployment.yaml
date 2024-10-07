@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: php
-          image: ericsonmessias/php:v1
+          image: ericsonmessias/php:v2
           resources:        
             limits:
               cpu: "200m"   
