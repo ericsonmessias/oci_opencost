@@ -4,7 +4,6 @@ resources:
 - deployment.yaml
 - service.yaml
 
-namespace: php
 images:
 - name: php
   newName: ericsonmessias/php
