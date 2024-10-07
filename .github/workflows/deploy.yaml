@@ -29,7 +29,7 @@ jobs:
       - name: Construir e Push da Imagem Docker
         uses: docker/build-push-action@v4
         with:
-          context: /docker
+          context: ./docker
           push: true
           tags: |
             ericsonmessias/php:${{ github.sha }}
