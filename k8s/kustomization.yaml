@@ -6,6 +6,8 @@ resources:
 
 namespace: php
 images:
+- name: ericsonmessias/php
+  newName: ericsonmessias/php
+  newTag: a7cf26438d1d3a9363e090086222d69f854cc230
 - name: php
   newName: ericsonmessias/php
-  newTag: 
