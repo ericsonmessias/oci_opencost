@@ -8,4 +8,4 @@ namespace: php
 images:
 - name: php
   newName: ericsonmessias/php
-  newTag: d3432e1d4f3144e168e75f2fce410194566fa63f
+  newTag: a50b1f03b24a9faff84173c358f5ade4fb6803ab
