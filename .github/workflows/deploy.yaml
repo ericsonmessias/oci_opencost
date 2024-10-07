@@ -34,7 +34,7 @@ jobs:
           tags: |
             ericsonmessias/php:${{ github.sha }}
             ericsonmessias/php:latest
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64, linux/arm/v7
 
   deploy:
     name: Deploy to Kubernetes
@@ -56,7 +56,7 @@ jobs:
 
       - name: Atualizar Tag da Imagem no Kustomize
         run: |
-          cd php
+          cd k8s
           kustomize edit set image ericsonmessias/php=ericsonmessias/php:${{ github.sha }}
           cat kustomization.yaml
 
@@ -66,7 +66,7 @@ jobs:
           git commit -m "Atualiza imagem PHP para ${{ github.sha }}" || echo "Nenhuma alteração para commitar"
 
       - name: Push das Alterações
-        uses: ad-m/github-push-action@v1.6.0  # Especifique uma versão estável
+        uses: ad-m/github-push-action@master  # Especifique uma versão estável
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master  # Certifique-se de que está direcionando para a branch correta
