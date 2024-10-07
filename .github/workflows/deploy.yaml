@@ -56,7 +56,7 @@ jobs:
 
       - name: Atualizar Tag da Imagem no Kustomize
         run: |
-          cd k8s
+          cd php
           kustomize edit set image ericsonmessias/php=ericsonmessias/php:${{ github.sha }}
           cat kustomization.yaml
 
