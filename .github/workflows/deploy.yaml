@@ -62,7 +62,7 @@ jobs:
 
       - name: Commit das Alterações
         run: |
-          git add k8s/kustomization.yaml
+          git add php/kustomization.yaml
           git commit -m "Atualiza imagem PHP para ${{ github.sha }}" || echo "Nenhuma alteração para commitar"
 
       - name: Push das Alterações
