@@ -34,7 +34,7 @@ jobs:
           tags: |
             ericsonmessias/php:${{ github.sha }}
             ericsonmessias/php:latest
-          platforms: linux/amd64,linux/arm64, linux/arm/v7
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
 
   deploy:
     name: Deploy to Kubernetes
@@ -62,7 +62,7 @@ jobs:
 
       - name: Commit das Alterações
         run: |
-          git add php/kustomization.yaml
+          git add k8s/kustomization.yaml
           git commit -m "Atualiza imagem PHP para ${{ github.sha }}" || echo "Nenhuma alteração para commitar"
 
       - name: Push das Alterações
