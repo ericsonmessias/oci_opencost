@@ -6,4 +6,4 @@ resources:
 images:
 - name: php
   newName: ericsonmessias/php
-  newTag: 56e0599762246b6d331cdc16cc58ca9dfbb6a985
+  newTag: d4628f9aedc7ddb826cda4a422487e57a02d9a60
