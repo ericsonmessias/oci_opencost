@@ -6,12 +6,12 @@ metadata:
   labels:
     app: php
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app: php
   template:
-    metadata:               # Adicionei o bloco 'metadata' faltante no template
+    metadata:              
       labels:
         app: php
     spec:
