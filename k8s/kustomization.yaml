@@ -3,8 +3,7 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - service.yaml
-
 images:
 - name: php
   newName: ericsonmessias/php
-  newTag: 4a465631a14fcc7d8dde54b91e156feb40b7a442
+  newTag: ee497d3d3ac543d4c8416e95b30cf645e17d4111
