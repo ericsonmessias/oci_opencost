@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
       app: php
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 8080
       protocol: TCP
