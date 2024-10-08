@@ -1,2 +1,2 @@
-tls.crt
-tls.key
+*.crt
+*.key
