@@ -6,7 +6,7 @@ metadata:
   labels:
     app: php
 spec:
-  replicas: 10
+#  replicas: 10
   selector:
     matchLabels:
       app: php
@@ -25,3 +25,31 @@ spec:
             requests:        
               cpu: "100m"
               memory: "1Gi"
+          ports:
+            - containerPort: 80
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-hpa
+  namespace: php
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: php
+  minReplicas: 10
+  maxReplicas: 25
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 80
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
