@@ -8,7 +8,7 @@ p {text-align: center;}
 </head>
 <body>
 
-<h1>Welcome to PHP v3.3.1</h1>
+<h1>Welcome to PHP v3.4.0</h1>
 
 <p>
 <?php
